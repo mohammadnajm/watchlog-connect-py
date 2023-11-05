@@ -1,8 +1,8 @@
-from client import WebSocketClient
+from watchlog import watchlogConnect
 import asyncio
 
 async def main():
-    ws_client = WebSocketClient()
+    ws_client = watchlogConnect()
 
     await ws_client.connect()
     await ws_client.increment("first_metric")

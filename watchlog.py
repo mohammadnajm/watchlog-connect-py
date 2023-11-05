@@ -3,7 +3,7 @@ import websockets
 import json
 url = "ws://localhost:3774"
 
-class WebSocketClient:
+class watchlogConnect:
     def __init__(self):
         self.websocket = None
         
