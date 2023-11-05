@@ -26,7 +26,7 @@ await ws_client.percentage("Your_metric" , 12.23)
 await ws_client.gauge("Your_metric" , 12.23)
 
 # Send Metric: To send byte of a metric (value is required)
-await ws_client.systembyte("Your_metric" , 1024000000) //for example : 1024000000 is 1 GB
+await ws_client.systembyte("Your_metric" , 1024000000) # for example : 1024000000 is 1 GB
 
 if __name__ == "__main__":
     asyncio.get_event_loop().run_until_complete(main())
