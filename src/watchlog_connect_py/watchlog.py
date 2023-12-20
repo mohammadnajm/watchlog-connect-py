@@ -100,7 +100,51 @@ class watchlogConnect:
             else:
                 await self.connect()
 
-
+    async def log(self, service , logMessage):
+        if service and isinstance(service, str) and (isinstance(logMessage , str) ) :
+            message = json.dumps({"method" : "log", "service" : service, "message" : logMessage, "status" : 0})
+            if self.websocket:
+                try:
+                    await self.websocket.send(message)
+                    print(f"Sent message: {message}")
+                except Exception as e:
+                    print(f"Failed to send message to watchlog agent: {e}")
+            else:
+                await self.connect()
+                
+    async def successLog(self, service , logMessage):
+        if service and isinstance(service, str) and (isinstance(logMessage , str) ) :
+            message = json.dumps({"method" : "log", "service" : service, "message" : logMessage, "status" : 1})
+            if self.websocket:
+                try:
+                    await self.websocket.send(message)
+                    print(f"Sent message: {message}")
+                except Exception as e:
+                    print(f"Failed to send message to watchlog agent: {e}")
+            else:
+                await self.connect()
+    async def warningLog(self, service , logMessage):
+        if service and isinstance(service, str) and (isinstance(logMessage , str) ) :
+            message = json.dumps({"method" : "log", "service" : service, "message" : logMessage, "status" : 2})
+            if self.websocket:
+                try:
+                    await self.websocket.send(message)
+                    print(f"Sent message: {message}")
+                except Exception as e:
+                    print(f"Failed to send message to watchlog agent: {e}")
+            else:
+                await self.connect()
+    async def errorLog(self, service , logMessage):
+        if service and isinstance(service, str) and (isinstance(logMessage , str) ) :
+            message = json.dumps({"method" : "log", "service" : service, "message" : logMessage, "status" : -1})
+            if self.websocket:
+                try:
+                    await self.websocket.send(message)
+                    print(f"Sent message: {message}")
+                except Exception as e:
+                    print(f"Failed to send message to watchlog agent: {e}")
+            else:
+                await self.connect()
 
 
     async def receive_messages(self):

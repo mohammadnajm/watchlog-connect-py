@@ -32,6 +32,13 @@ async def main():
     # Send Metric: To send byte of a metric (value is required)
     await ws_client.systembyte("Your_metric" , 1024000000) # for example : 1024000000 is 1 GB
 
+    #Log manager 
+    await ws_client.log("app or service", "info message")
+    await ws_client.successLog("app or service", "success message")
+    await ws_client.errorLog("app or service", "error message")
+    await ws_client.warningLog("app or service", "warning message")
+
+
 if __name__ == "__main__":
     asyncio.get_event_loop().run_until_complete(main())
 
