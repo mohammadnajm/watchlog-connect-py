@@ -1,6 +1,6 @@
 # watchlog
 
-A python client for [watchlog](https://watchlog.us/) server .
+A python client for [watchlog](https://watchlog.io/) server .
 
 
 

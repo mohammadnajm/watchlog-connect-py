@@ -1,6 +1,6 @@
 [project]
 name = "watchlog_connect_py"
-version = "0.0.5"
+version = "0.0.6"
 authors = [
   { name="mohammadnajm", email="mohammadnajm75@email.com" },
 ]
